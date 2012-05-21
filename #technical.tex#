@@ -42,7 +42,7 @@ correctly \cite{hoare-cacm69}, it also enables them to analyze the
 time and space complexity of an algorithm or program.  Even though few
 programmers prove theorems about their programs on a routine basis,
 knowing how to do so sharpens their ability to systematically reason
-about code as they create.  It also helps them reason through a
+about code as they create it.  It also helps them reason through a
 specific execution when they try to debug it, determining both how
 they arrived at this point in the program and what changes must be
 made to prevent an error from occuring.
