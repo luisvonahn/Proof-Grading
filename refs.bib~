@@ -107,7 +107,7 @@ pages = "33--35"
 } 
 
 @techreport{vonahn05,
-author = "L. von~Ahn",
+author = "L. Von~Ahn",
 title = "Human Computation",
 year = 2005,
 institution = "Carnegie Mellon University School of Computer Science",
