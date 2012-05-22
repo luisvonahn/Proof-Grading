@@ -12,4 +12,5 @@ technical.pdf: technical.tex refs.bib
 	pdflatex technical
 
 clean:
-	rm -f *~ *.dvi summary.pdf technical.pdf *.bak 
+	rm -f *~ *.dvi *.bak 
+	rm -f summary.pdf technical.pdf *.aux *.log *.bbl *.blg
