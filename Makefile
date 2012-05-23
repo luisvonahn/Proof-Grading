@@ -1,9 +1,12 @@
-DOCS=summary.pdf technical.pdf
+DOCS=summary.pdf technical.pdf reb-bio.pdf data.pdf
 
 all: $(DOCS)
 
 summary.pdf: summary.tex
 	pdflatex summary
+
+data.pdf: data.tex
+	pdflatex data
 
 technical.pdf: technical.tex refs.bib
 	pdflatex technical
