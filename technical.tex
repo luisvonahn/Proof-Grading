@@ -2,8 +2,10 @@
 \usepackage{fullpage}
 \usepackage{times}
 \usepackage{graphicx}
+\usepackage{natbib}
+\bibpunct{(}{)}{,}{a}{}{,}
 
-\bibliographystyle{plain}
+\bibliographystyle{plainnat}
 
 \title{Creating a Scalable and Reliable Peer Assessment System for
   Mathematical Proofs}
@@ -48,7 +50,7 @@ through the reasoning process at an appropriate level of detail.
 Being able to write proofs is also a fundamental requirement in the
 education of computer scientists.  Not only does it provide a
 mechanism where they can formally verify that a program will function
-correctly \cite{hoare-cacm69}, it also enables them to analyze the
+correctly \citep{hoare-cacm69}, it also enables them to analyze the
 time and space complexity of an algorithm or program.  Even though few
 programmers prove theorems about their programs on a routine basis,
 knowing how to do so sharpens their ability to systematically reason
@@ -82,7 +84,7 @@ curriculum at Carnegie Mellon University so that all majors and many
 nonmajors take two programming courses---one on imperative programming
 and one on functional programming---that have students writing and
 proving preconditions, postconditions, and invariants
-\cite{bryant-ugrad10}.  Students also take courses in
+\citep{bryant-ugrad10}.  Students also take courses in
 discrete mathematics and introductory theoretical computer science
 that involve proofs and formal reasoning, all within their first two years.
 These courses each have
@@ -97,7 +99,7 @@ Going beyond the need to provide assessments for classes with
 enrollments in the hundreds, consider the recent advent of {\em web-scale}
 courses, such as Massively Open Online Courses (MOOCs),
  offered to 10,000 or more students for free over the Internet
-\cite{carson-am12,lewin-nyt12}.
+\citep{carson-am12,lewin-nyt12}.
 Although it is easy enough to provide simple
 assessments to these students, such as multiple-choice questions, 
 there is no feasible way to have students attempt to write proofs and
@@ -118,7 +120,7 @@ almost no experience in critically evaluating proofs.
 We approach this problem as one of {\em human computation}, using
 computer technology to devise systems in which useful work can be done by
 harnessing the power of large numbers of nonexperts
-\cite{quinn-chi11, vonahn05}.  This requires
+\citep{quinn-chi11, vonahn05}.  This requires
 the task to be decomposed into smaller units of work, each of which 
 can be performed by the available talent pool.  It also requires
 mechanisms to generate these units, supply them to the workers, and
@@ -136,8 +138,8 @@ The published literature on teaching students how to write good proofs
 and how to assess their work is remarkably sparse.  Most published
 work focuses on creating a tightly knit group of students working
 under the close supervision of an instructor
-\cite{cohen-amm82,jones-amm77}, or a small-enrollment, seminar-style
-course \cite{reisel-amm82}.  These environments do allow students to
+\citep{cohen-amm82,jones-amm77}, or a small-enrollment, seminar-style
+course \citep{reisel-amm82}.  These environments do allow students to
 discuss and evaluate each other's work, but they cannot be scaled to
 larger classes.  Indeed, it seems that most math programs avoid
 proof-based assignments with their large-enrollment, introductory
@@ -148,7 +150,7 @@ class with multiple graders is for the instructor to generate a {\em
   scoring rubric} giving a detailed description of what components the
 solution must contain, how each of these components should be
 evaluated, and how points should be assigned
-\cite{moskal-pa2000}.  Anyone who has tried devising a
+\citep{moskal-pa2000}.  Anyone who has tried devising a
 good scoring rubric knows that is very difficult.  Covering all of the
 possible cases, and having it assign consistent and appropriate scores
 requires considerable effort.  Quite commonly, the system must be
@@ -158,7 +160,7 @@ example by spot-checking a large collection of assignments to see if
 the rubric was followed properly.
 
 Perhaps the most relevant prior work was done by Zerr at the
-University of North Dakota \cite{zerr-primus11}.
+University of North Dakota \citep{zerr-primus11}.
 He instituted formal peer evaluation, but
 in a way that actually increased the required effort by the
 instructor, rather than reducing it.  Even so, it produced some
@@ -169,7 +171,7 @@ incorrect proofs, however, many of the reviewers failed to even detect
 that they were incorrect, and even fewer were able to pinpoint the exact error.
 
 Other computer scientists have created generic, online peer review systems
-\cite{gehringer-sigcse05, wolfe-ite04}, but these did not address the
+\citep{gehringer-sigcse05, wolfe-ite04}, but these did not address the
 assessment of proofs explicitly, and indeed provided little or no
 framework for guiding the assessment process.
 
@@ -288,7 +290,7 @@ enrollments ranging from 400 to 1,600.  Although this model is
 obviously simplistic, we can see some validation with very large
 courses.  For example, Prof.~James Maas of Cornell University was
 renowned for teaching an introductory psychology course with 1,600
-students, staffed by 22 teaching assistants \cite{arenson-nyt00}.
+students, staffed by 22 teaching assistants \citep{arenson-nyt00}.
 Harvard's introductory computer science course CS~50 has an enrollment
 of around 600 students, and their web page lists over 50 staff
 members.  In the former case, the graduate teaching assistants working
@@ -546,7 +548,7 @@ motivate these volunteers, we must have a very structured and reliable
 framework that will ensure that the assessments are of high quality.
 Fortunately, systems such as Wikipedia demonstrate that skilled labor
 can be recruited to do useful work for free, when provided proper incentives
-\cite{nov-cacm07}.
+\citep{nov-cacm07}.
 
 Some aspects of web-scale courses simplify the assessment task.
 Given that current and planned MOOCs do not provide
