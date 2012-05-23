@@ -6,18 +6,11 @@ summary.pdf: summary.tex
 	pdflatex summary
 
 technical.pdf: technical.tex refs.bib
-	latex technical
+	pdflatex technical
 	bibtex technical
-	latex technical
+	pdflatex technical
 	pdflatex technical
 
-
-outline.pdf: outline.tex refs.bib
-	latex outline
-	bibtex outline
-	latex outline
-	pdflatex outline
-
-
 clean:
-	rm -f *~ *.dvi *.pdf *.bak 
+	rm -f *~ *.dvi *.bak 
+	rm -f summary.pdf technical.pdf *.aux *.log *.bbl *.blg
