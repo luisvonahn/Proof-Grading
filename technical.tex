@@ -7,6 +7,9 @@
 
 \bibliographystyle{plainnat}
 
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1ex}
+
 \title{Creating a Scalable and Reliable Peer Assessment System for
   Mathematical Proofs}
 
@@ -46,14 +49,17 @@ each of which can be performed by nonexperts.  Identifying these
 structures will also lead to a deeper understanding of how to teach
 the writing of proofs.  In addition, it will explore ways to maximize
 the learning experience students gain by critically evaluating each
-other's proofs.
+other's proofs.  By supporting web-scale courses, it will create a
+platform on which rigorous and large-scale experiments can be
+conducted on the effectiveness of different strategies for teaching
+students how to write and review mathematical proofs.
 
 As {\bf broader impacts}, this research seeks to enable students in
 large classes and in web-scale courses to enhance their learning by
 receiving useful feedback on proofs they write.  It will bring to
-large numbers of students an opportunity that is otherwise available
-only in environments consisting of small numbers of students getting
-attention from expert mentors.
+large numbers of students an educational opportunity that is otherwise
+available only in environments consisting of small numbers of students
+getting attention from expert mentors.  
 
 
 \section{Motivation}
@@ -68,7 +74,7 @@ through the reasoning process at an appropriate level of detail.
 
 Being able to write proofs is also a fundamental requirement in the
 education of computer scientists.  Not only does it provide a
-mechanism where they can formally verify that a program will function
+mechanism with which they can formally verify that a program will function
 correctly \citep{hoare-cacm69}, it also enables them to analyze the
 time and space complexity of an algorithm or program.  Even though few
 programmers prove theorems about their programs on a routine basis,
@@ -78,14 +84,17 @@ specific execution when they try to debug it, determining both how
 they arrived at this point in the program and what changes must be
 made to prevent an error from occurring.
 
-
 Learning how to write good proofs can be very challenging for many
 students.  In many ways, it is like learning to write a compelling
 essay or to paint a beautiful picture---it requires internalizing a
 core set of rules and technical skills, while also learning how to
-communicate concepts to others.  Just as with creative writing or art,
-the ideal learning environment for proof writing is one where
-students get personal attention by expert mentors.
+communicate concepts to others. 
+Studies have shown that learning to write proofs requires
+considerable practice, with feedback based on both an ideal model of a
+correct proof, and the buggy models of possible errors
+\citep{anderson-jls95}.  Just as with creative writing or art, the
+ideal learning environment for proof writing is one where students get
+personal attention by expert mentors \citep{anderson-jmb86}.
 
 Unfortunately, most undergraduate students get their early training in
 mathematics and computer science in large classes, where it is
@@ -100,7 +109,7 @@ abilities (formative) and to give them proper credit for their efforts
 
 As a case in point, we recently revised the undergraduate computer science
 curriculum at Carnegie Mellon University so that all majors and many
-nonmajors take two programming courses---one on imperative programming
+nonmajors take two introductory programming courses---one on imperative programming
 and one on functional programming---that have students writing and
 proving preconditions, postconditions, and invariants
 \citep{bryant-ugrad10}.  Students also take courses in
@@ -146,6 +155,20 @@ mechanisms to generate these units, supply them to the workers, and
 then aggregate the results, such that the outcome is valid, even when
 some of the workers either inadvertently or maliciously misuse the system.
 
+The potential impact of a scalable system for assessing proofs could
+be quite profound.  Being able to handle large enrollment classes
+would make it possible to run courses with proof-based assignments at
+colleges and universities across the entire U.S., and indeed much of
+the world.  Web-scale courses are nearing the point of having 100,000
+participants.  Equipping them with the ability to provide high quality
+feedback to the students as they learn to write proofs would create an
+effective learning environment that is available not just to college
+students, but to anyone with the ambition to learn.  Looking further,
+we can see that there are many millions of people in the world who
+would benefit from an education in mathematics, but they have neither
+the resources nor the opportunity to do so.  Only by creating truly
+scalable systems can we hope to meet the educational needs of the world.
+
 \section{Existing Work on Peer Assessment}
 
 As background, we consider the work done by others, as well as the
@@ -158,13 +181,36 @@ and how to assess their work is remarkably sparse.  Most published
 work focuses on creating a tightly knit group of students working
 under the close supervision of an instructor
 \citep{cohen-amm82,jones-amm77}, or a small-enrollment, seminar-style
-course \citep{reisel-amm82}.  These environments do allow students to
+course \citep{reisel-amm82}.  These environments allow students to
 discuss and evaluate each other's work, but they cannot be scaled to
 larger classes.  Indeed, it seems that most math programs avoid
 proof-based assignments with their large-enrollment, introductory
 courses.
 
-The common approach for grading any assignment for a large
+Important work has been done on the use of computer-based tools in
+teaching students to write proofs.  These include computerized tutors
+for high school geometry \citep{anderson-jmb86} and introductory formal
+logic \citep{scheines-93,scheines-94}.  These tutors include checkers
+that can evaluate the correctness of the students' proofs and even
+provide guidance in how to correct erroneous proof steps.  Such a level
+of automation is possible in these two domains, because the proofs are
+written at a very low level of detail, explictly stating the
+justification of each inference step.  Researchers at Stanford have
+developed a computer-based proof environment for use in a variety of
+mathematics classes \citep{sommer-jar04}.  It uses symbolic algebra and
+automatic theorem proving techniques to try to infer the steps that
+are normally omitted in a proof intended for human readers rather than
+computerized checkers.  Ultimately, however, it is up to the students
+to provide enough guidance so that the program can reliably check the
+validity of the proof.  These tools differ from our approach in that
+they require students to write proofs that are to be read by
+computers, rather than by other humans.  There is a large stylistic
+difference between these two forms of proof.  The former is like
+writing a program: there is a very strict and formal structure,
+whereas the latter is more like an essay: it must conform to a logical
+structure, but without giving explicit, low-level details.
+
+The common approach for grading an assignment for a large
 class with multiple graders is for the instructor to generate a {\em
   scoring rubric} giving a detailed description of what components the
 solution must contain, how each of these components should be
@@ -177,6 +223,12 @@ revised as the grading proceeds, requiring assignments to be
 regraded.  Even more work is required to ensure quality control, for
 example by spot-checking a large collection of assignments to see if
 the rubric was followed properly.
+In addition, grading proofs from a rubric still requires a great deal of
+sophistication.  In our experience, even our 
+undergraduate graders require several months of
+practice before they become reasonably proficient.  As such, it cannot serve as
+the basis for a peer assessment system.
+
 
 Perhaps the most relevant prior work was done by Zerr at the
 University of North Dakota \citep{zerr-primus11}.
@@ -358,7 +410,7 @@ twin objectives of maximizing the quality of the assessments produced, as
 well as the learning value students gain by performing peer assessment.
 
 Figure \ref{fig:schedule} illustrates how work over the two-year
-period funded by this proposal fits into the overall plan.  (The
+period funded by this proposal fits into an overall plan.  (The
 schedule shown in this figure is only approximate.)  As is indicated,
 we have already invested two years of work in building and deploying
 our prototype system.  During the proposal period, we will concentrate
@@ -440,7 +492,7 @@ then structure their proofs accordingly.
 
 \subsubsection*{Assigning graders and reviewers}
 
-Our current method of assigning reviewers to proofs attempts to avoid
+Our current method of assigning proofs to reviewers attempts to avoid
 conflicts of interest, but it is otherwise completely random.  We
 believe we can achieve better results (both in terms of grading accuracy and learning outcomes) by making use of the
 heterogeneity of the students, both as proof generators and reviewers,
@@ -463,6 +515,20 @@ grade than incorrect ones, we can bias the assignment of reviewers and
 graders so that the more challenging ones are assigned to the most
 qualified assessors.
 
+\subsubsection*{Providing Training on Assessment}
+
+One way to improve the effectiveness of students performing peer
+reviews would be to have them do explicit exercises for this task.
+This could be done in a session where students are provided with a set
+of proofs to assess that are known to represent a range of strategies,
+including both valid and invalid examples.  They could then get
+immediate feedback on the quality of their work, which is recognized
+as an important principle for acquiring cognitive skills
+\citep{anderson-jls95}.  Such training sessions could also serve as
+opportunities to ``assess the assessors,'' so that we would have more
+input to the process of assigning proofs to reviewers.
+
+
 \subsubsection*{Evaluation}
 
 There are multiple methods for measuring the effectiveness of an
@@ -474,6 +540,16 @@ generated by our system.  In addition, we can evaluate the uniformity
 of the assessment system by having multiple, independent assessments
 of a single set of proofs.  Similar experiments can measure the
 comparative effectiveness of different assessment systems.
+
+Indeed, we claim that the baseline for comparison for assessing
+proofs should not be that of an expert giving a careful review, but a more
+typical setting where a group of 10 undergraduate graders is given 200
+assignments to review.  If reviewing a proof requires 10 minutes, then
+each grader must work for over three hours.  Our experience has been
+that it is very difficult to maintain consistency across graders, and
+even for the same grader over time.  We would like to quantify this
+experience by conducting experiments that more closely model this
+typical environment.
 
 \subsection{Improving Learning Experience}
 
@@ -532,19 +608,25 @@ redundancy in assigning proofs to reviewers, beyond that required to
 ensure assessment quality.  For example, we could ensure that everyone
 gets a chance to study a high quality proof by increasing the number
 of reviews for an exemplary proof.  Such proofs could be identified by
-the graders or other reviewers, or could even be crafted by the staff.
-Similar strategies would allow us to fine tune the range of proof types
-and proof qualities that the students review.
+the graders or other reviewers, or they could even be crafted by the
+staff.  Similarly, we might want to seed the reviewing process with
+proofs that are known to contain flaws, so that students get
+practice identifying specific classes of errors.  Similar strategies
+would allow us to fine tune the range of proof types and proof
+qualities that the students review.
 
 Evaluating the students' perception of the learning benefit of
 performing peer reviews can readily be done via surveys.  Evaluating
-the actual learning benefit is far more difficult, especially with the
-many experimental factors that cannot be controlled, and the small sample size
-provided by a single class.  We believe that this aspect of the
-assessment system will best be evaluated when we move to web-scale
-courses.  As will be discussed, such an environment provides more
-opportunities to run reliable quantitative experiments of learning
-effectiveness. 
+the actual learning benefit is more difficult, but we can gain some
+insight by running A/B experiments across different sections of a
+single course, or across the different offerings of a course over time
+\citep{kohavi-dmkd09}.  However, the value of such experiments is
+limited by the many experimental factors that cannot be controlled,
+and by the small sample size of a course within a single institution.
+We believe that this aspect of the assessment system will best be
+evaluated when we move to web-scale courses.  As will be discussed,
+such an environment provides more opportunities to run reliable
+quantitative experiments of learning effectiveness.
 
 \subsection{Scaling to Web-Scale Courses}
 
@@ -639,8 +721,8 @@ As an example, a web-scale course will enable us to truly evaluate the
 learning value students obtained by participating in peer reviews.  We
 can run experiments where one group does no peer reviewing and another
 does, and then evaluate student achievement across the two groups.  By
-contrast, such an experiment would be harder to conduct in a single
-traditional class, because the students would soon realize that they
+contrast, such an experiment does not work as well in a single
+traditional class, because the students soon realize that they
 are being asked to participate in different tasks, leading to a
 tainting of the experiment.  Attempting to run such an experiment
 across multiple traditional classes, either temporally or at different
@@ -678,12 +760,22 @@ out a new and relatively untested system.
 \subsection{Beyond grading proofs}
 
 Our assessment system focuses on mathematical proofs, but we believe
-there are other activities for which similar, peer-based assessment
-could be applied.  Some examples include:
+there are other review activities for which similar, peer-based assessment
+could be applied.  What we require are activities that cannot
+be fully automated, but there is enough structure to the process that
+the work can be decomposed into simple tasks that can be performed by
+nonexperts.  In addition, we would hope that participating in the review
+process would help the improve their own skills.
+
+Some examples of suitable review activities include:
 \begin{itemize}
 \item
 Evaluation of programs for style, based on conformance to a set of
-coding guidelines.
+coding guidelines.  This can be divided into such tasks as assessing
+the suitability of variable and function names, the quality of the
+commenting, and the use of modularity.  Indeed, a system along these
+lines is under development at MIT and has already been used by around 400
+students \citep{tang-mit11}.
 
 \item
 Code review for specific properties, such as security vulnerabilities,
@@ -693,26 +785,19 @@ memory management errors, or efficiency.
 Low-level text editing, such as for written assignments in an ESL course.
 \end{itemize}
 
-All of these examples are ones that cannot be checked automatically,
-but there is enough structure that to the process that the work can be
-decomposed into simple tasks that can be performed by nonexperts.  In
-addition, we can see that participating in the review process would
-help students improve their own skills as programmers or writers.
-
 As these examples show, we believe that human computation can
 compensate for the lack of direct human contact in a variety of
 large-scale learning environments.  In doing so, we can make high
 quality education available to large groups of people at very low
 cost.  Such tools also provide opportunities to run rigorous and
 detailed experiments on the effectiveness of teaching strategies, with
-the possibility that we can become more effective at education than is
-possible with conventional approaches.
+the possibility that we can become more effective at education using
+online tools than is possible with conventional approaches.
 
 \section{Results from Prior NSF Support}
 
 Of the two PIs, only Luis von Ahn has received NSF support within the
-last two years.
-
+last five years.
 
 \newpage
 
