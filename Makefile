@@ -14,6 +14,12 @@ technical.pdf: technical.tex refs.bib
 	pdflatex technical
 	pdflatex technical
 
+reb-bio.pdf: reb-bio.tex
+	pdflatex reb-bio
+
+lva-bio.pdf: lva-bio.tex
+	pdflatex lva-bio
+
 clean:
 	rm -f *~ *.dvi *.bak 
 	rm -f summary.pdf technical.pdf *.aux *.log *.bbl *.blg
