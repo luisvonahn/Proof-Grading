@@ -1,4 +1,4 @@
-DOCS=summary.pdf technical.pdf reb-bio.pdf data.pdf
+DOCS=summary.pdf technical.pdf reb-bio.pdf lva-bio.pdf data.pdf
 
 all: $(DOCS)
 
@@ -8,7 +8,8 @@ summary.pdf: summary.tex
 data.pdf: data.tex
 	pdflatex data
 
-technical.pdf: technical.tex refs.bib
+technical.pdf: technical.tex refs.bib squeeze.sty \
+		schedule.pdf screenshot-grading.pdf list_verifications.pdf
 	pdflatex technical
 	bibtex technical
 	pdflatex technical
