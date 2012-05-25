@@ -29,7 +29,7 @@ performing the assessments, by teaching them how to critically review
 and evaluate proofs.  Within the scope of this proposal, the work will
 focus on developing and evaluating a system to support the assessment
 of proof-based assignments in large classes, with enrollments of 200
-or more students.  It will also begin the design and extension of a
+or more students.  It will also begin the design of a
 system that can support web-scale courses with 10,000 or more
 participants.
 
@@ -94,7 +94,7 @@ considerable practice, with feedback based on both an ideal model of a
 correct proof, and the buggy models of possible errors
 \citep{anderson-jls95}.  Just as with creative writing or art, the
 ideal learning environment for proof writing is one where students get
-personal attention by expert mentors \citep{anderson-jmb86}.
+personal attention by expert mentors \citep{anderson-ijcai85}.
 
 Unfortunately, most undergraduate students get their early training in
 mathematics and computer science in large classes, where it is
@@ -187,15 +187,17 @@ larger classes.  Indeed, it seems that most math programs avoid
 proof-based assignments with their large-enrollment, introductory
 courses.
 
-Important work has been done on the use of computer-based tools in
-teaching students to write proofs.  These include computerized tutors
-for high school geometry \citep{anderson-jmb86} and introductory formal
-logic \citep{scheines-93,scheines-94}.  These tutors include checkers
+Important work has been done on the use of computer-based tools for
+teaching students to prove mathematical theorems.
+These include computerized tutors
+for high school geometry \citep{anderson-ijcai85} and introductory formal
+logic \citep{scheines-93,scheines-94}.  These tutors incorporate proof checkers
 that can evaluate the correctness of the students' proofs and even
 provide guidance in how to correct erroneous proof steps.  Such a level
 of automation is possible in these two domains, because the proofs are
-written at a very low level of detail, explictly stating the
-justification of each inference step.  Researchers at Stanford have
+written at a very low level of detail, explicitly stating the
+justification of each inference step in terms of previous steps.
+Researchers at Stanford have
 developed a computer-based proof environment for use in a variety of
 mathematics classes \citep{sommer-jar04}.  It uses symbolic algebra and
 automatic theorem proving techniques to try to infer the steps that
@@ -206,9 +208,12 @@ validity of the proof.  These tools differ from our approach in that
 they require students to write proofs that are to be read by
 computers, rather than by other humans.  There is a large stylistic
 difference between these two forms of proof.  The former is like
-writing a program: there is a very strict and formal structure,
+writing a program: it must follow a very strict and formal structure,
 whereas the latter is more like an essay: it must conform to a logical
-structure, but without giving explicit, low-level details.
+structure, but it need not give explicit, low-level details.  There is
+presently no automated proof checker that can verify the
+proofs written by students in typical college-level
+mathematics and computer science courses.
 
 The common approach for grading an assignment for a large
 class with multiple graders is for the instructor to generate a {\em
@@ -216,22 +221,23 @@ class with multiple graders is for the instructor to generate a {\em
 solution must contain, how each of these components should be
 evaluated, and how points should be assigned
 \citep{moskal-pa2000}.  Anyone who has tried devising a
-good scoring rubric knows that is very difficult.  Covering all of the
+good scoring rubric knows that is a very difficult task.  Covering all of the
 possible cases, and having it assign consistent and appropriate scores
-requires considerable effort.  Quite commonly, the system must be
+requires considerable effort.  Quite commonly, the rubric must be
 revised as the grading proceeds, requiring assignments to be
 regraded.  Even more work is required to ensure quality control, for
 example by spot-checking a large collection of assignments to see if
 the rubric was followed properly.
 In addition, grading proofs from a rubric still requires a great deal of
-sophistication.  In our experience, even our 
+sophistication, because the grader must have a complete understanding
+of the purported proof, including identifying its flaws.
+In our experience, even our 
 undergraduate graders require several months of
 practice before they become reasonably proficient.  As such, it cannot serve as
 the basis for a peer assessment system.
 
-
-Perhaps the most relevant prior work was done by Zerr at the
-University of North Dakota \citep{zerr-primus11}.
+Perhaps the most relevant prior work was done by Zerr and Zerr at the
+University of North Dakota \citet{zerr-primus11}.
 He instituted formal peer evaluation, but
 in a way that actually increased the required effort by the
 instructor, rather than reducing it.  Even so, it produced some
@@ -479,7 +485,8 @@ explicitly identified.  Some example structures include:
 \item A case analysis must include proofs of each possible case.
 \end{itemize}
 In addition, more complex proofs should be broken down into a set of
-lemmas with a valid dependency structure.
+lemmas with a valid dependency structure,
+as can be captured by a proof graph \cite{anderson-science85}.
 
 For problems assigned in the introductory and intermediate-level
 courses we are targeting, there will only be a limited number of
@@ -558,7 +565,8 @@ each grader must work for over three hours.  Our experience has been
 that it is very difficult to maintain consistency across graders, and
 even for the same grader over time.  We would like to quantify this
 experience by conducting experiments that more closely model this
-typical environment.
+typical environment, and then see how much the presence of student
+reviews accelerates the grading process and improves its quality.
 
 \subsection{Improving Learning Experience}
 
@@ -570,7 +578,7 @@ learning experience, both in truth and by their perception.
 
 We believe that our adoption of a more structured representation of
 proofs will enable the peer reviewers to better internalize the
-appropriate proof structures.  This will get a detailed view of
+appropriate proof structures.  They will get a detailed view of
 alternate ways to prove something and to pinpoint places where a proof
 is either invalid or incomplete.  Thus, our proposed work on pathway
 verification will improve both the assessment quality and the learning
@@ -774,7 +782,7 @@ could be applied.  What we require are activities that cannot
 be fully automated, but there is enough structure to the process that
 the work can be decomposed into simple tasks that can be performed by
 nonexperts.  In addition, we would hope that participating in the review
-process would help the improve their own skills.
+process would help them improve their own skills.
 
 Some examples of suitable review activities include:
 \begin{itemize}
@@ -885,6 +893,7 @@ This grant has supported the development of http://duolingo.com, which
 will be released to the public on June 19, 2012.
 
 \newpage
+\setcounter{page}{1}
 
 \bibliography{refs}
 
