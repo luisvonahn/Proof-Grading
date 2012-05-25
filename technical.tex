@@ -10,6 +10,9 @@
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1ex}
 
+\usepackage{squeeze}
+
+
 \title{Creating a Scalable and Reliable Peer Assessment System for
   Mathematical Proofs}
 
@@ -254,6 +257,14 @@ framework for guiding the assessment process.
 
 \subsection{Our Prototype System}
 
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.45]{screenshot-grading}
+\end{center}
+\caption{Screenshot of Prototype Proof Grading System}
+\label{fig:screenshot}
+\end{figure}
+
 At Carnegie Mellon University, one of our undergraduate graders, Adam
 Blank, created a system that serves as the prototype for the proposed
 research.  Indeed, he is now a PhD student and this proposal seeks
@@ -264,6 +275,8 @@ ranging from 60 to 380 students, in both computer science (introduction
 to theoretical computer science) and mathematics (discrete math). 
 Figure \ref{fig:screenshot} shows part of the interface of the system 
 from the instructor's point of view.
+
+
 
 Elements of this system demonstrate 
 how a scalable and reliable peer assessment system can work.  First,
@@ -283,14 +296,6 @@ instructor and by experienced graders, based on grading a sample of
 around 15 proofs.  Of the 148 problems that have been graded with
 attribute-based grading, nine had 100 or more applicable attributes,
 while the average was 40.6.  
-
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[scale=0.45]{screenshot-grading}
-\end{center}
-\caption{Screenshot of Prototype Proof Grading System}
-\label{fig:screenshot}
-\end{figure}
 
 The actual grade for a proof is computed using a formula, devised
 by the instructor, based on which attributes apply.  This mechanism
@@ -410,9 +415,9 @@ performing assessment.
 
 \section{Proposed Work}
 
-\begin{figure}[ht]
+\begin{figure}
 \begin{center}
-\includegraphics[scale=0.7]{schedule}
+\includegraphics[scale=0.5]{schedule}
 \end{center}
 \caption{Proposed Activity Schedule}
 \label{fig:schedule}
