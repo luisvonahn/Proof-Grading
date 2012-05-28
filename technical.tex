@@ -63,7 +63,10 @@ large classes and in web-scale courses to enhance their learning by
 receiving useful feedback on proofs they write.  It will bring to
 large numbers of students an educational opportunity that is otherwise
 available only in environments consisting of small numbers of students
-getting attention from expert mentors.  
+getting attention from expert mentors.  It will work toward a truly
+scalable assessment system---one that can serve as an educational
+platform for the many millions of people around the world who could
+benefit from a high quality mathematics education. 
 
 
 \section{Motivation}
@@ -237,11 +240,12 @@ sophistication, because the grader must have a complete understanding
 of the purported proof, including identifying its flaws.
 In our experience, even our 
 undergraduate graders require several months of
-practice before they become reasonably proficient.  As such, it cannot serve as
+practice before they become reasonably proficient at grading proofs
+from a rubric.  As such, it cannot serve as
 the basis for a peer assessment system.
 
 Perhaps the most relevant prior work was done by \citet{zerr-primus11} at the
-University of North Dakota
+University of North Dakota.
 They instituted formal peer evaluation, but
 in a way that actually increased the required effort by the
 instructor, rather than reducing it.  Even so, it produced some
@@ -268,7 +272,7 @@ framework for guiding the assessment process.
 
 At Carnegie Mellon University, one of our undergraduate graders, Adam
 Blank, created a system that serves as the prototype for the proposed
-research.  Indeed, he is now a PhD student and this proposal seeks
+research.  Indeed, he is now a PhD student, and this proposal seeks
 funding to support him.  The system is designed to support large classes,
 with the assessment performed by the students in the class and by
 undergraduate graders.  It has been used in classes with enrollments
@@ -342,14 +346,14 @@ improve quality and to ensure integrity of the process.
 Although the conditions for and scale of the deployment of our
 prototype system were insufficient to perform a systematic evaluation,
 we have gained some insights from anecdotal evidence and from a survey
-conducted in one of the classes.  First, the system worked better than existing
+conducted in one of the classes.  The system worked better than existing
 rubric-based approaches.
-The graders found that the student
+The student
 reviewers generally identified all of the applicable attributes for a
 proof, although their selections had to be pruned down and
 occasionally augmented.  The graders found having this input from the
 student reviewers useful, even though they still had to carefully
-review the proofs themselves.  Second, the instructors found the
+review the proofs themselves.  The instructors found the
 grades assigned to the proofs to generally be fair assessments of
 their quality.  The idea of generating a score automatically from the
 set of applicable attributes was seen as greatly improving the
@@ -434,7 +438,8 @@ performing assessment.
 
 
 Our long-term goal is to create educational technology that enables
-students to learn how to write and evaluate proofs.  We propose
+students in large-scale learning environments
+to learn how to write and evaluate proofs.  We propose
 building on the ideas embodied in our prototype to support both large
 classes and web-scale courses.  We will design our systems with the
 twin objectives of maximizing the quality of the assessments produced, as
@@ -502,7 +507,7 @@ explicitly identified.  Some example structures include:
 \end{itemize}
 In addition, more complex proofs should be broken down into a set of
 lemmas with a valid dependency structure,
-as can be captured by a proof graph \cite{anderson-science85}.
+as can be captured by a proof graph \citep{anderson-science85}.
 
 For problems assigned in the introductory and intermediate-level
 courses we are targeting, there will only be a limited number of
@@ -614,7 +619,7 @@ language analysis, we should be able to estimate properties, such as
 1) whether the proof is likely to be correct, 2) how clear the presentation
 will be, and 3) what pathway structure it follows.  Although this
 information will not be completely reliable, we can use it to control
-useful weights in the random process of assigning proofs to reviewers.
+weights when randomly assigning proofs to reviewers.
 
 In maximizing the learning experience, we must take into account the
 heterogeneity of the students, both in the quality of the proofs they
@@ -644,8 +649,8 @@ gets a chance to study a high quality proof by increasing the number
 of reviews for an exemplary proof.  Such proofs could be identified by
 the graders or other reviewers, or they could even be crafted by the
 staff.  Similarly, we might want to seed the reviewing process with
-proofs that are known to contain flaws, so that students get
-practice identifying specific classes of errors.  Similar strategies
+proofs that are known to contain specific flaws, so that students get
+practice identifying these classes of errors.  Similar strategies
 would allow us to fine tune the range of proof types and proof
 qualities that the students review.
 
@@ -671,11 +676,11 @@ challenges and opportunities of working at this scale, since our
 intention is to continue past the proposal period with a more
 ambitious range of activities.
 
-As we have discussed, a true web-scale course cannot rely on a
+As we have discussed, a web-scale course cannot rely on a
 two-level hierarchy.  Indeed, if the course is to be offered at little
 or no cost, the instructor can only have a small set of assistants.
-We therefore cannot have paid staff directly oversee the efforts of
-individual students, as we did with large classes.  We must therefore
+We cannot have paid staff directly oversee the efforts of
+individual students, as we did with large classes.  We must 
 find a method to recruit volunteer labor, including current and former
 students from the course.  In addition to providing incentives to
 motivate these volunteers, we must have a very structured and reliable
@@ -744,7 +749,7 @@ reliable statistical sample than is possible in any classroom
 environment.  Moreover, the students are less likely to interact with
 one another outside of the experimental environment, and so there will
 be less tainting of control groups or between participants in A/B
-testing.  Furthermore, we can conduct experiments at very fine levels
+testing.  We can also conduct experiments at very fine levels
 of granularity, where only small variations in conditions are
 evaluated among the different populations.  The fact that MOOCs are
 very inexpensive (typically free), and that they do not supply an
@@ -767,7 +772,7 @@ respects.
 Beyond answering large questions, such as ``Does participating in peer
 reviewing make students learn the material better?'' our platform can
 allow us to test the effectiveness of more incremental changes, such
-as how proofs are assigned to reviewers, what framework is provided
+as how proofs are assigned to reviewers, what frameworks are provided
 for the review process, etc.  Since the student experience can be
 controlled in very detailed and individualized ways, and all of the
 data will be collected in electronic form, we will have experimental
